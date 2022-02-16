@@ -1,0 +1,125 @@
+.p-footer {
+    
+    padding:11rem 0;
+    
+    a:hover {
+        opacity:.5;
+    }
+    
+    p {
+        
+        text-align:center;
+        
+        @media (min-width:$screen-sm) {
+            text-align:left;
+        }
+    }
+    
+    .icon-sigle {
+        
+        @include icon(55px);
+        
+    }
+    
+    &_tel {
+        
+        @include fluid-text(20px,30px);
+        
+    }
+    
+    .grid {
+        
+        @media (min-width:$screen-sm) {
+            
+            display:grid;
+            padding:0 8%;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: 
+                "sigle horaires" 
+                "telephone horaires"
+                "adresse legals"
+                
+        }
+        
+        @media (min-width:$screen-lg) {
+            
+            grid-template-columns: 33.33% 33.33% 33.33%;
+            grid-template-areas: 
+                "telephone horaires adresse" 
+                "sigle horaires legals"
+                
+        }
+        
+        @media (min-width:$screen-xl) {
+            
+            grid-template-columns: 40% 30% 30%;
+                
+        }
+        
+        &_item2,
+        &_item3,
+        &_item4,
+        &_item5
+        {
+            margin-top:30px;
+            
+            @media (min-width:$screen-md) {
+                
+                margin-top:0
+                
+            }
+        }
+        
+        &_item1 {
+            
+            @media (min-width:$screen-sm) {
+                grid-area: sigle;
+            }
+            
+            @media (min-width:$screen-lg) {
+                display:flex;
+                align-items:flex-end;
+            }
+            
+        }
+        
+        &_item2 {
+            
+            @media (min-width:$screen-sm) {
+                grid-area: telephone;
+            }
+            
+        }
+        
+        &_item3 {
+            
+            @media (min-width:$screen-sm) {
+                grid-area: horaires;
+            }
+            
+        }
+        
+        &_item4 {
+            
+            @media (min-width:$screen-sm) {
+                grid-area: adresse;
+            }
+            
+        }
+        
+        &_item5 {
+            
+            @media (min-width:$screen-sm) {
+                grid-area: legals;
+                margin-top:20px;
+            }
+            
+            @media (min-width:$screen-md) {
+                display:flex;
+                align-items: flex-end;
+            }
+            
+        }
+    }
+    
+}

@@ -1,0 +1,186 @@
+$screen-lg:                  1200px;
+$screen-md:                  992px;
+$screen-sm:                  760px;
+$screen-xs:                  480px;
+
+/*************************************************
+// BOOTSTRAP & VARIABLES
+*************************************************/
+
+$font-family-sans-serif: 'Open Sans', Arial, sans-serif;
+$font-size-base: 10px;
+$line-height-base: 1;
+$link-hover-color:inherit;
+$link-hover-decoration:none;
+@import 'utilities/_bootstrap';
+@import 'utilities/_bootstrap_bp_1590';
+
+
+$dark                 : #000000;
+$secondary            : #292828;
+$light                : #ffffff;
+$primary              : #efdf00;
+
+/*************************************************
+// FONTS
+*************************************************/
+
+@import 'utilities/_fonts';
+
+/*************************************************
+// MIXINS
+*************************************************/
+
+@import 'utilities/_mixins';
+
+/*************************************************
+// BASE
+*************************************************/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-variant-ligatures: common-ligatures;
+}
+
+/*************************************************
+// HACK BOOTSTRAP
+*************************************************/
+
+.container, .row, .container {
+    @include position(relative,5);
+}
+
+.container {
+    padding:0 30px;
+    @media (min-width:$screen-sm) {
+        padding:0 15px;
+    }
+}
+
+/*************************************************
+// BASE
+*************************************************/
+
+html {
+    font-size:5.2px;
+    font-family:$font;
+    color:$dark;
+    width:100%;
+    min-height:100%;
+    font-kerning:none;
+    @media (min-width: $screen-sm) {
+        font-size:6.1px;
+    }
+    @media (min-width: $screen-md) {
+        font-size:7.2px;
+    }
+    @media (min-width: $screen-lg) {
+        font-size:8.5px;
+    }
+    @media (min-width: $screen-xl) {
+        font-size:10px;
+    }
+}
+body {
+    min-height:100%;
+    max-width:100%;
+    background: $dark;
+}
+
+button,
+input,
+textarea {
+    border: none;
+    background: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+a,
+button {
+    transition:all .3s ease;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a img {
+    border: 0;
+}
+
+a:hover,
+button:hover {
+    text-decoration: none;
+}
+
+img,
+svg {
+    border: none;
+}
+
+ul, li {
+    list-style: none;
+    list-style-type: none;
+}
+
+b, strong {
+    @extend %font-bold;
+}
+
+div,
+p {
+    font-size:14px;
+    line-height:1.6;
+    @extend %font;
+    text-align: left;
+    color: $light;
+    margin-top:0;
+    margin-bottom:0;
+    
+    @media (min-width:$screen-lg) {
+        font-size:16px;
+    }
+    
+    @media (min-width:$screen-xl) {
+        font-size:18px;
+    }
+}
+
+#main-content {
+    max-width:100vw;
+    overflow: hidden;
+}
+
+/*************************************************
+// IMPORT DEPENDENCIES
+*************************************************/
+
+// Dependencies
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+// Components
+//@import 'components/_formulaire';
+
+// Utilities
+@import 'utilities/_utils';
+@import 'utilities/_cookies';
+@import 'utilities/_animations';
+
+// Partials
+@import 'partials/_header';
+@import 'partials/_footer';
+
+// Pages
+@import 'pages/_accueil';
+@import 'pages/_legals';

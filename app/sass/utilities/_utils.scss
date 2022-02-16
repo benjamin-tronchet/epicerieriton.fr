@@ -1,0 +1,468 @@
+// **************************************** UTILITIES TEXT
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.u-small {
+    font-size: 75%;
+}
+
+.u-big {
+    font-size: 125%;
+}
+
+.u-vertical-text {
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    
+    &--right {
+        
+        @extend .u-vertical-text;
+        transform: rotate(90deg);
+        
+    }
+}
+
+// **************************************** VERTICAL TITLES
+
+.u-vertical-title {
+    
+    @extend %font-bold;
+    @include fluid-text(30px,75px);
+    @include position(absolute,1,30rem,0);
+    white-space: nowrap;
+    line-height:1;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transform:none;
+    text-transform: uppercase;
+    transform-origin: 100% 0%;
+    transform: rotate(-90deg) translateY(-83%);
+    color:$secondary;
+    
+}
+
+// **************************************** TITLES
+
+.u-title {
+    @extend %font-bold;
+    display: inline-block;
+    vertical-align:top;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    &_h1 {
+        @extend .u-title;
+        @include fluid-text(30px, 65px);
+        color: $light;
+        line-height: 1.15;
+
+        &--sub {
+            @extend .u-title_h1;
+            color:$primary;
+            @include fluid-text(18px,35px);
+            
+        }
+    }
+    
+    &_h2 {
+        @extend .u-title;
+        @include fluid-text(25px, 60px);
+        color: $light;
+        line-height: 1.25;
+        margin-bottom: 7rem;
+    }
+    
+    &_h3 {
+        @extend .u-title;
+        @include fluid-text(25px, 40px);
+        color: $light;
+        line-height: 1.25;
+        margin-bottom: 7rem; 
+    }
+}
+
+// **************************************** BUTTONS
+
+.u-button {
+    @extend %font-bold;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size:14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content: center;
+    padding:0 6rem;
+    min-width:100%;
+    background:$primary;
+    color:$dark; 
+    height:50px;
+    border:solid 1px transparent;
+    
+    &:hover {
+        background:none;
+        color:$primary;
+        border-color:$primary;
+    }
+    
+    &--noir {
+        @extend .u-button;
+        background:$dark;
+        color:$primary;
+        
+        &:hover {
+            background:$secondary;
+        }
+    }
+    
+    @media (min-width:$screen-sm) {
+        min-width:180px;
+        font-size:18px;
+        height:55px;
+    }
+    
+    @media (min-width:$screen-lg) {
+        min-width:0;
+        font-size:20px;
+        height:60px;
+        min-width:230px;
+    }
+}
+
+
+// **************************************** COLORS
+
+.blanc {
+    color: $light;
+
+    &-bg {
+        background: $light;
+    }
+}
+
+.gris {
+    color: $secondary;
+
+    &-bg {
+        background: $secondary;
+    }
+}
+
+.jaune {
+    color: $primary;
+
+    &-bg {
+        background: $primary;
+    }
+}
+
+.noir {
+    color: $dark;
+
+    &-bg {
+        background: $dark;
+    }
+}
+
+
+// **************************************** SECTIONS
+
+.u-section {
+    
+    position:relative;
+    min-height:110vh;
+    height:auto;
+    background:$light;
+    
+    &:nth-child(2n) {
+        background:$secondary;
+    }
+    
+}
+
+
+
+// **************************************** CONTENT BLOCK
+
+.u-content {
+    
+    position:relative;
+    
+    // Section - Number
+    
+    &_number {
+        
+        @include position(absolute,5,0,auto,auto,0);
+        @include fluid-text(25px,30px);
+        @extend %font-bold;
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        width:15rem;
+        height:15rem;
+        
+        @media (min-width:$screen-sm) {
+            right:0%;
+            left:auto;
+        }
+        
+        @media (min-width:$screen-lg) {
+            right:50%;
+            left:auto;
+        }
+        
+    }
+    
+    // Section - Text
+    
+    &_text {
+        
+        padding-top:25rem;
+        padding-bottom:19rem;
+        
+        @media (min-width:$screen-sm) {
+            padding-top:19rem;
+            padding-bottom:19rem;
+        }
+        
+        @media (min-width:$screen-lg) {
+            padding-top:0rem;
+            padding-bottom:0rem;
+            @include position(absolute,5,50%,0,auto,0);
+            margin:auto;
+            transform: translateY(-50%);
+        }
+        
+    }
+    
+    // Section - Image
+    
+    &_img {
+        
+        background:$dark;
+        position:relative;
+        
+        @media (min-width:$screen-sm) {
+            width:45%;
+            overflow:hidden;
+            @include position(absolute,1,0,0,0);
+        }
+        
+        @media (min-width:$screen-lg) {
+            width:50%;
+            position:relative;
+            left:50%;
+        }
+        
+        img {
+            
+            width:100%;
+            height:auto;
+            opacity:30%;
+            position:relative;
+            
+            @media (min-width:$screen-sm) {
+                height:100%;
+                width:auto;
+                position:absolute;
+                left:50%;
+                transform: translateX(-50%);
+            }
+            
+            @media (min-width:$screen-lg) {
+                height:auto;
+                width:100%;
+                position:relative;
+                left:auto;
+                transform:none;
+            }
+            
+        }   
+    }
+    
+    // Content - Alternative Version
+    
+    &--alt {
+        
+        @extend .u-content;
+        
+        .u-content {
+            
+            &_number {
+                
+                right:0;
+                left:auto;
+                
+                @media (min-width:$screen-sm) {
+                    left:0;
+                    right:auto;
+                }
+                
+                @media (min-width:$screen-lg) {
+                    left:50%;
+                    right:auto;
+                }
+                
+            }
+            
+            &_img {
+                
+                @media (min-width:$screen-sm) {
+                    left:0;
+                    right:auto;
+                }
+                
+            }
+            
+        }
+        
+    }
+}
+
+
+// **************************************** DOTS (PUCES)
+
+.u-dot {
+    
+    display:block;
+    padding-left:4rem;
+    position:relative;
+    
+    &:before {
+        content:'\e903';
+        font-family: 'icomoon';
+        display:inline-block;
+        vertical-align: middle;
+        @include position(absolute,1,6px,auto,auto,0)
+        @include icon(10px);
+        color:$primary;
+        
+        @media (min-width:$screen-lg) {
+            top:10px;
+        }
+    }
+    
+    &+& {
+        
+        margin-top:20px;
+        
+    }
+    
+}
+
+// **************************************** MODALES
+
+.u-modal {
+    
+    @include position(fixed,-1,0,0,0,0);
+    width:100vw;
+    background:rgba(0,0,0,.9);
+    transition:all .5s ease .5s;
+    opacity:0;
+    
+    // *** Close button part
+    
+    &_close {
+        display:inline-flex;
+        width:25px;
+        height:25px;
+        @include position(fixed,100,3rem,3rem);
+        cursor:pointer;
+        &:after,
+        &:before {
+            content:'';
+            display:block;
+            width:100%;
+            height:2px;
+            background:$light;
+            @include position(absolute,1,0,0,0,0);
+            margin:auto;
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    
+    // *** Box content part
+    
+    &_box {
+        @include position(absolute,1,40%,auto,auto,50%);
+        transform: translate(-50%,-50%);
+        width:calc(100% - 60px);
+        background:$light;
+        box-shadow:0px 0px 5rem rgba(0,0,0,.5);
+        border:solid 1px rgba(255,255,255,.2);
+        border-radius: 8px;
+        opacity:0;
+        overflow:hidden;
+        transition:all .5s ease;
+        
+        @media (min-width:$screen-sm) {
+            width:700px;
+        }
+        @media (min-width:$screen-lg) {
+            width:750px;
+        }
+        @media (min-width:$screen-xl) {
+            width:850px;
+        }
+    }
+    
+    // *** Main content part
+    
+    &__content {
+        
+        padding-bottom:55%;
+        
+    }
+    
+    // *** Iframe (youtube vidéo) part
+    
+    &__iframe
+    {
+        @include position(absolute,1,0,0,0,0);
+        width:100%!important;
+        height:100%!important;
+    }
+    
+    // *** Opening effects
+    
+    &.active {
+        opacity:1;
+        transition-delay:0s;
+        z-index:100000;
+        
+        .u-modal_box {
+            top:50%;
+            opacity:1;
+            transition:all .5s ease .75s;
+        }
+    }
+}

@@ -1,0 +1,302 @@
+.accueil {
+    
+    // ***** Intro text part
+    
+    &_intro {
+        
+        padding:30rem 0;
+        
+        &_img {
+            
+            @include position(absolute,1,0,auto,auto,0);
+            width:100%;
+            height:auto;
+            
+        }
+        
+    }
+    
+    // ***** Text animation part
+    
+    &_anim-text {
+        
+        padding-bottom: 20rem;
+        overflow:hidden;
+        
+        &_item {
+            
+            @extend %font-bold;
+            min-width:100%;
+            text-align: center;
+            white-space: nowrap;
+            @include fluid-text(30px,150px);
+            text-stroke:.1rem $primary;
+            -webkit-text-stroke:0.1rem $primary;
+            color:transparent;
+            line-height:1.2;
+            
+        }
+        
+    }
+    
+    // ***** Atelier part
+    
+    &_atelier {
+        
+        // Atelier - Intro
+        
+        &_intro {
+            
+            padding:7rem 0 40rem;
+            
+            .u-vertical-title {
+                top:0;
+            }
+            
+        }
+        
+        &_garanties {
+            
+            padding:25rem 0;
+            
+            .grid {
+                display:grid;
+                grid-template-areas: "title" "list" "bouton";
+                
+                @media (min-width:$screen-md) {
+                    grid-template-areas: "list title" "list bouton";
+                    grid-template-columns: 50% 50%;
+                }
+            }
+            
+            .grid-item-1 {
+                grid-area: title;
+            }
+            
+            .grid-item-2 {
+                grid-area: list;
+            }
+            
+            .grid-item-3 {
+                grid-area: bouton;
+                position:relative;
+                margin-top: 50px;
+                
+                @media (min-width:$screen-md) {
+                    margin-top:0;
+                    display:flex;
+                    align-items:flex-end;
+                }
+            }
+            
+        }
+        
+    }
+    
+    // ***** Véhicules part
+    
+    &_vehicules {
+        
+        padding:25rem 0;
+        
+        &_spacer {
+            
+            height:1px;
+            background:$primary;
+            
+        }
+        
+    }
+    
+    // ***** Financement part
+    
+    &_financement {
+        
+        padding:25rem 0;
+        
+        &_img {
+            
+            width:100%;
+            height:auto;
+            
+        }
+        
+        &_spacer {
+            
+            height:1px;
+            background:$primary;
+            
+        }
+        
+    }
+    
+    // ***** Carousel Youtube part
+    
+    &_carousel {
+        
+        padding:10rem 0 20rem;
+        
+        &_button {
+            
+            @extend %font-medium;
+            color:$dark;
+            font-size:5rem;
+            
+            &:hover {
+                color:$secondary;
+            }
+            
+        }
+        
+    }
+    
+    &_slideshow {
+        
+        margin-left:-15px;
+        margin-right:-15px;
+        margin-top:5rem;
+        
+        @media (min-width:$screen-sm) {
+            
+            margin-right:0;
+            width:calc(100% + 15px + ((100vw - 750px) / 2));
+            
+        }
+        
+        @media (min-width:$screen-md) {
+            
+            width:calc(100% + 15px + ((100vw - 970px) / 2));
+            
+        }
+        
+        @media (min-width:$screen-lg) {
+            
+            width:calc(100% + 15px + ((100vw - 1170px) / 2));
+            
+        }
+        
+        @media (min-width:$screen-xl) {
+            
+            width:calc(100% + 15px + ((100vw - 1560px) / 2));
+            
+        }
+        
+        &_slide {
+            
+            width:100%;
+            padding-bottom:56.2%;
+            position:relative;
+            overflow:hidden;
+            cursor:pointer;
+            background:$dark;
+            
+            &_img {
+                
+                @include position(absolute,1,0,0,0,0);
+                margin:auto;
+                width:100%;
+                opacity:.85;
+                transition:all .35s ease-out;
+                
+            }
+            
+            .icon-player {
+                
+                @include icon(40px);
+                @include position(absolute,5,50%,50%);
+                transform:translate(50%,-50%);
+                
+            }
+            
+            &:hover {
+                
+                .accueil_slideshow_slide_img {
+                    
+                    opacity:.5;
+                    transform: scale(1.1);
+                    
+                }
+                
+            }
+            
+        }
+        
+        .slick-list {
+            overflow:visible;
+        }
+        
+        .slick-slide {
+            padding:0 15px;
+            overflow:hidden;
+        }
+    }
+    
+    &_contact {
+        
+        padding:25rem 0;
+        
+        .grid {
+            
+            @media (min-width:$screen-md) {
+                
+                display:grid;
+                grid-template-areas: "title form" "sigle form";
+                grid-template-columns: 50% 50%;
+                
+            }
+            
+            &_item1 {
+                
+                grid-area: sigle;
+                
+                @media (min-width:$screen-md) {
+                    
+                    display:flex;
+                    align-items:flex-end;
+                    
+                }
+                
+            }
+            
+            &_item2 {
+                
+                grid-area: title;
+                
+            }
+            
+            &_item3 {
+                
+                margin-top: 60px;
+                grid-area: form;
+                
+                @media (min-width:$screen-md) {
+                    margin-top: 0;
+                }
+                
+            }
+            
+        }
+        
+        .icon-sigle {
+            
+            @include icon(35px);
+            margin-bottom:70px;
+            
+            @media (min-width:$screen-sm) {
+                @include icon(40px);
+            }
+            
+            @media (min-width:$screen-md) {
+                @include icon(40px);
+                margin-bottom:0;
+            }
+            
+            @media (min-width:$screen-lg) {
+                @include icon(50px);
+            }
+        
+        }
+        
+    }
+    
+}

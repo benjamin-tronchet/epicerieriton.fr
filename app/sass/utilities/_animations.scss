@@ -1,0 +1,221 @@
+/*************************************************
+// ANIMATIONS
+*************************************************/
+
+@keyframes up-down {
+    from {transform:translateY(0%);}
+    7.5% {transform:translateY(25%);}
+    15% {transform:translateY(0%);}
+    100% {transform:translateY(0%);}
+}
+@keyframes left-right {
+    from {transform:translateX(0%);}
+    25% {transform:translateX(-5%);}
+    75% {transform:translateX(5%);}
+    100% {transform:translateX(0%);}
+}
+
+.p-header {
+    &_scroll,
+    &_scrollbar {
+        transition:all .5s ease-out 1s;
+    }
+    &_title {
+        transition:all .75s ease-out;
+    }
+    &_background {
+        transition:all .75s ease-out;
+    }
+}
+.inactive {
+    .p-header {
+        &_nav {
+            opacity:0;
+            transform: translateY(-100%);
+        }
+        &_title {
+            opacity:0;
+            transform: translateY(50%);
+        }
+        &_background {
+            opacity:0;
+        }
+        &_scroll {
+            opacity:0;
+            transform: translateY(100%);
+        }
+        &_scrollbar {
+            opacity:0;
+            transform: translateX(-100%);
+        }
+    }
+}
+
+
+
+
+
+//======================================================
+// WOOW EFFECTS
+//======================================================
+
+.masked, .masked * {
+    transition:none!important;
+    transition-delay:0!important;
+}
+
+.fadeIn {
+    transition:all .7s ease-out;
+    opacity:1;
+    &.masked {
+        opacity:0;
+    }
+}
+.zoomIn {
+    transition:all .35s ease-out;
+    opacity:1;
+    &.masked {
+        opacity:0;
+        transform: scale(25%)
+    }
+}
+.zoomOut {
+    transition:all .35s ease-out;
+    opacity:1;
+    &.masked {
+        opacity:0;
+        transform: scale(130%)
+    }
+}
+
+.slideFromBottom,
+.slideFromBottom-half,
+.slideFromBottom-double,
+.slideFromBottom-quarter {
+    transition:all .7s ease-out;
+    opacity:1;
+    transform:translateY(0);
+    &.masked {
+        opacity:0;
+        transform:translateY(100%);
+    }
+}
+.slideFromBottom-half {
+    &.masked {
+        opacity:0;
+        transform:translateY(50%);
+    }
+}
+.slideFromBottom-double {
+    &.masked {
+        opacity:0;
+        transform:translateY(150%);
+    }
+}
+.slideFromBottom-quarter {
+    &.masked {
+        opacity:0;
+        transform:translateY(25%);
+    }
+}
+.delay {
+    @media (min-width:$screen-sm) {
+        @for $i from 1 through 6 {
+            &--#{$i} {
+                transition-delay:$i*.1s;
+            }
+        }
+    }
+}
+
+.slideFromLeft,
+.slideFromLeft-half,
+.slideFromLeft-double,
+.slideFromLeft-quarter {
+    transition:all .7s ease-out;
+    opacity:1;
+    transform: translateY(0);
+    @media (min-width:$screen-md) {
+        transform:translateX(0);
+    }
+    &.masked {
+        opacity:0;
+        transform: translateY(100%);
+        @media (min-width:$screen-md) {
+            transform:translateX(-100%);
+        }
+    }
+}
+.slideFromLeft-half {
+    &.masked {
+        opacity:0;
+        transform: translateY(50%);
+        @media (min-width:$screen-md) {
+            transform:translateX(-50%);
+        }
+    }
+}
+.slideFromLeft-double {
+    &.masked {
+        opacity:0;
+        transform: translateY(150%);
+        @media (min-width:$screen-md) {
+            transform:translateX(-150%);
+        }
+    }
+}
+.slideFromLeft-quarter {
+    &.masked {
+        opacity:0;
+        transform: translateY(25%);
+        @media (min-width:$screen-md) {
+            transform:translateX(-25%);
+        }
+    }
+}
+
+.slideFromRight,
+.slideFromRight-half,
+.slideFromRight-double,
+.slideFromRight-quarter {
+    transition:all .7s ease-out;
+    opacity:1;
+    transform: translateY(0);
+    @media (min-width:$screen-md) {
+        transform:translateX(0);
+    }
+    &.masked {
+        opacity:0;
+        transform: translateY(100%);
+        @media (min-width:$screen-md) {
+            transform:translateX(100%);
+        }
+    }
+}
+.slideFromRight-half {
+    &.masked {
+        opacity:0;
+        transform: translateY(50%);
+        @media (min-width:$screen-md) {
+            transform:translateX(50%);
+        }
+    }
+}
+.slideFromRight-double {
+    &.masked {
+        opacity:0;
+        transform: translateY(150%);
+        @media (min-width:$screen-md) {
+            transform:translateX(150%);
+        }
+    }
+}
+.slideFromRight-quarter {
+    &.masked {
+        opacity:0;
+        transform: translateY(25%);
+        @media (min-width:$screen-md) {
+            transform:translateX(25%);
+        }
+    }
+}

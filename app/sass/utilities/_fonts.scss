@@ -1,0 +1,100 @@
+@import url("https://p.typekit.net/p.css?s=1&k=qqs0waw&ht=tk&f=28977.28982.28991&a=87216329&app=typekit&e=css");
+
+@font-face {
+font-family:"termina";
+src:url("https://use.typekit.net/af/1d76ab/00000000000000007735b21c/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/1d76ab/00000000000000007735b21c/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/1d76ab/00000000000000007735b21c/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"termina";
+src:url("https://use.typekit.net/af/3e72b6/00000000000000007735b21e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/3e72b6/00000000000000007735b21e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/3e72b6/00000000000000007735b21e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:500;
+}
+
+@font-face {
+font-family:"termina";
+src:url("https://use.typekit.net/af/574117/00000000000000007735b222/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/574117/00000000000000007735b222/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/574117/00000000000000007735b222/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;
+}
+
+
+$font : 'termina';
+$font-medium : 'termina';
+$font-cursive : 'termina';
+
+%font {
+    font-family    :$font;
+    font-weight    :400;
+    font-style     :normal;
+}
+%font-medium {
+    font-family    :$font;
+    font-weight    :500;
+    font-style     :normal;
+}
+%font-bold {
+    font-family    :$font;
+    font-weight    :700;
+    font-style     :normal;
+}
+
+.font {
+    @extend %font;
+}
+
+.font-medium {
+    @extend %font-medium;
+}
+
+.font-bold {
+    @extend %font-bold;
+}
+
+// =====================================
+// ICOMOON PART
+// =====================================
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?6kly5u');
+  src:  url('../fonts/icomoon.eot?6kly5u#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?6kly5u') format('truetype'),
+    url('../fonts/icomoon.woff?6kly5u') format('woff'),
+    url('../fonts/icomoon.svg?6kly5u#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sigle:before {
+  content: "\e900";
+}
+.icon-mouse:before {
+  content: "\e901";
+}
+.icon-sigle-stroke:before {
+  content: "\e902";
+}
+.icon-puce:before {
+  content: "\e903";
+}
+.icon-player:before {
+  content: "\e904";
+}
+
